@@ -307,9 +307,6 @@
   .nav .menu-nav_link {
     font-size: 1.5rem;
   }
-  .about_bio {
-    font-size: 1.5rem;
-  }
   .contact_list {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
