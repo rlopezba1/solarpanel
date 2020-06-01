@@ -1,0 +1,164 @@
+// .menu-btn{
+//     position: absolute;
+//     z-index: 1;
+//     right: 1rem;
+//     top: 1rem;
+//     height: 20px;
+//     width: 28px;
+//     cursor: pointer;
+//     @include transition-ease;
+
+//     &_burger {
+//         position: absolute;
+//         right: 0;
+//         top: 0.5rem;
+//         width: 28px;
+//         height: 3px;
+//         background: set-text-color($primary-color);
+//         @include transition-ease;
+
+//         &::before {
+//             content: '';
+//             position: absolute;
+//             top: -8px;
+//             width: 28px;
+//             height: 3px;
+//             background: set-text-color($primary-color);
+//             @include transition-ease;
+//         }
+
+//         &::after{
+//             content: '';
+//             position: absolute;
+//             top: 8px;
+//             width: 20px;
+//             height: 3px;
+//             background: set-text-color($primary-color);
+//             @include transition-ease;
+//         }
+
+//         &.open {
+//             transform: rotate(720deg);
+//             background: transparent;
+
+//             &::before {
+//                 transform: rotate(45deg) translate(5px, 8px);
+//             }
+
+//             &::after {
+//                 width: 28px;
+//                 transform: rotate(-45deg) translate(3px, -7px);
+//             }
+//         }
+//     }
+// }
+
+// .nav {
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     width: 100vw;
+//     opacity: 0.98;
+//     visibility: hidden;
+
+//     &.open {
+//         visibility: visible;
+//     }
+
+//     .menu-nav {
+//         display: flex;
+//         flex-flow: column wrap;
+//         align-items: center;
+//         justify-content: center;
+//         height: 100vh;
+//         overflow: hidden;
+//         background: $primary-color;
+//         list-style-type: none;
+//         padding-right: 1rem;
+//         transform: translateY(-100%);
+//         @include transition-ease;
+
+//         &.open{
+//             transform: translateY(0);
+//         }
+//         &_item {
+//             transform: translateX(100vw);
+//             @include transition-ease;
+
+//             &.open{
+//                 transform: translateX(0);
+//             }
+//             &.active > a {
+//                 color: $secondary-color;
+//             }
+//         }
+//         &_link {
+//             display: inline-block;
+//             font-size: 2rem;
+//             text-transform: uppercase;
+//             padding: 2rem 0;
+//             font-weight: 300;
+//             @include transition-ease;
+
+//             &:hover{
+//                 color: $secondary-color;
+//             }
+//         }
+//     }
+// }
+
+// @for $i from 1 through 4 {
+//     .menu-nav_item:nth-child(#{$i}) {
+//         transition-delay: ($i * 0.1s) + 0.15s;
+//     }
+// }
+
+ /* The side navigation menu */
+ .sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: $secondary-color; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  }
+  
+  /* The navigation menu links */
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: $primary-color;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  /* Position and style the close button (top right corner) */
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+  #main {
+    transition: margin-left .5s;
+    padding: 20px;
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  } 

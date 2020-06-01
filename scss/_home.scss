@@ -1,0 +1,30 @@
+.home {
+    height: 100%;
+    padding-top: 40vh;
+    overflow: hidden;
+    align-items: center;
+    text-align: center;
+    background: url('../img/green.jpg') center top;
+
+         //background-size: cover;;
+ 
+     background-size: auto 150%;
+     background-repeat: no-repeat;
+    
+
+    &_name{
+        font-size: 5rem;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+        border-bottom: 2px solid set-text-color($primary-color);
+
+        &--last {
+            color: $secondary-color;
+            font-weight: 700;
+        }
+    }
+
+
+
+
+}
