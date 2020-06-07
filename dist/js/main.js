@@ -1,31 +1,86 @@
-// const menuBtn = document.querySelector('.menu-btn');
-// const hamburger = document.querySelector('.menu-btn_burger');
-// const nav = document.querySelector('.nav');
-// const menuNav = document.querySelector('.menu-nav');
-// const navItems = document.querySelectorAll('.menu-nav_item');
 
+let preload = () => {
+  const blocks = document.querySelectorAll('.preloader .blocks .block');
+  let interval = 0;
 
-// let showMenu = false;
+  blocks.forEach((block, i) => {
+    setTimeout(() => {
+      animate(block, i);
+    }, interval);
+    interval += 500;
+  })
 
-// menuBtn.addEventListener('click',toggleMenu)
+    
+  function animate(block, index){
+    let position = index;
+    setInterval(() => {
+      switch (position){
+        case 0:
+          block.style.top = "40px";
+          position = 3;
+          break;
+        case 1:
+          block.style.left = "40px";
+          position = 0;
+          break;
+        case 2:
+          block.style.top = "0px"; 
+          position = 1;
+          break;
+        case 3:
+          block.style.left = "0px";
+          position = 2;
+          break;
+      }
+    }, 1500)
+  }
 
-// function toggleMenu(){
-//     if(!showMenu) {
-//         hamburger.classList.add('open');
-//         nav.classList.add('open');
-//         menuNav.classList.add('open');
-//         navItems.forEach(item => item.classList.add('open'));
+  const preload_text = document.querySelector('.preloader .preload-text');
+  let dots = 1;
+  setInterval(() => {
+    switch (dots) {
+      case 1:
+        preload_text.textContent = "...Loading";
+        dots++;
+        break;
+      case 2:
+        preload_text.textContent = "..Loading.";
+        dots++;
+        break;
+      case 3:
+        preload_text.textContent = ".Loading..";
+        dots++;
+        break;
+      case 4:
+        preload_text.textContent = "Loading...";
+        dots++;
+        break;;
+      case 5:
+        preload_text.textContent = ".Loading..";
+        dots++;
+        break;
+      case 6:
+        preload_text.textContent = "..Loading.";
+        dots = 1;
+        break;
+    }
+  }, 500);
+}
+preload();
 
-//         showMenu = true;
-//     } else {
-//         hamburger.classList.remove('open');
-//         nav.classList.remove('open');
-//         menuNav.classList.remove('open');
-//         navItems.forEach(item => item.classList.remove('open'));
+const preloader = document.querySelector('.preloader');
+function finishedLoading (){
+  preloader.style.opacity = 0;
+  setTimeout(() => {
+    preloader.style.display = "none";
+  }, 500);
+}
 
-//         showMenu = false;
-//     }
-// }
+window.onload = function (){
+  setTimeout(() => {
+   finishedLoading();
+  }, 5000);
+}
 
 /* Set the width of the side navigation to 250px */
 function openNav() {
@@ -48,8 +103,8 @@ function closeModal() {
   document.getElementById("myModal").style.display = "none";
 }
 
-var slideIndex = 1;
-showSlides(slideIndex);
+//var slideIndex = 1;
+//showSlides(slideIndex);
 
 // Next/previous controls
 function plusSlides(n) {

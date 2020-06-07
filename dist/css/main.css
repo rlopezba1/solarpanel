@@ -152,14 +152,7 @@
 .projects {
   background: url("../img/green.jpg") center top;
   background-size: cover;
-  height: 100%;
-}
-
-.projects .text-secondary {
-  font-size: 2rem;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  height: 150%;
 }
 
 .projects_items {
@@ -306,6 +299,16 @@
   }
   .nav .menu-nav_link {
     font-size: 1.5rem;
+  }
+  .projects_bio-image {
+    height: 40vh;
+  }
+  .projects_items {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+  .projects .text-secondary {
+    font-size: 3rem;
   }
   .contact_list {
     -ms-grid-columns: (1fr)[2];
@@ -509,6 +512,98 @@ img.hover-shadow {
 .hover-shadow:hover {
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.preloader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  width: 100vw;
+  height: 100vh;
+  background-color: #171717;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+#social {
+  display: none;
+}
+
+.preloader .preload-text {
+  color: green;
+  font-size: 33px;
+  font-weight: 300;
+  margin-top: 50px;
+}
+
+.preloader .blocks {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  -webkit-animation: rotate 5s ease-in-out infinite;
+          animation: rotate 5s ease-in-out infinite;
+}
+
+.preloader .blocks .block {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  background-color: green;
+  -webkit-transition: all 0.25s linear;
+  transition: all 0.25s linear;
+}
+
+.preloader .blocks .block:nth-child(1) {
+  top: 0px;
+  left: 40px;
+}
+
+.preloader .blocks .block:nth-child(2) {
+  top: 0px;
+  left: 0px;
+}
+
+.preloader .blocks .block:nth-child(3) {
+  top: 40px;
+  left: 0px;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 
 body {

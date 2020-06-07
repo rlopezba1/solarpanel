@@ -1,4 +1,6 @@
+
 @include media-md{
+    
     .menu-btn{
         visibility: hidden;
     }
@@ -25,22 +27,20 @@
         }
     }
 
-    // .about_bio {
-    //     font-size: 1.5rem;
-    // }
+    .projects {
 
-    // .projects {
-    //     &_bio-image {
-    //         height: 40vh;
-    //     }
-    //     &_items {
-    //         grid-template-columns: repeat(2, 1fr);
-    //     }
-    //     .text-secondary {
-    //         font-size: 3rem;
-    //     }
+               
+        &_bio-image {
+            height: 40vh;
+        }
+        &_items {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .text-secondary {
+            font-size: 3rem;
+        }
 
-    // }
+    }
 
     .contact_list {
         grid-template-columns: repeat(2, 1fr);
